@@ -1,0 +1,380 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F58220">
+
+    <title>الإدارة | الميكانيك</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <script defer src="../js/storage.js"></script>
+    <script defer src="../js/admin.js"></script>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container nav-wrap">
+
+        <a class="brand" href="../index.html">
+            <span class="brand-mark">M</span>
+            <span>
+                الميكانيك
+                <small>الفضاء التعليمي</small>
+            </span>
+        </a>
+
+        <button class="menu-toggle"
+                aria-label="فتح القائمة"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="main-nav" aria-label="القائمة الرئيسية">
+            <a href="../index.html">الرئيسية</a>
+            <a href="ressources.html">الموارد</a>
+            <a class="active" href="admin.html">الإدارة</a>
+            <a class="nav-cta" href="ressources.html">
+                عرض المكتبة <span>←</span>
+            </a>
+        </nav>
+
+    </div>
+</header>
+
+<main class="page-main">
+
+    <!-- مقدمة صفحة الإدارة -->
+    <section class="page-hero admin-hero">
+        <div class="container">
+
+            <div class="breadcrumbs">
+                <a href="../index.html">الرئيسية</a>
+                <span> / </span>
+                <span>الإدارة</span>
+            </div>
+
+            <span class="eyebrow">فضاء الأستاذة</span>
+
+            <h1>
+                إدارة
+                <span>الوثائق التعليمية</span>
+            </h1>
+
+            <p>
+                أضيفي الوثائق، وعدّليها، واستبدلي الملفات أو احذفي الموارد من المكتبة التعليمية.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- مساحة الإدارة -->
+    <section class="container admin-layout">
+
+        <!-- تنبيه -->
+        <div class="admin-notice" role="note">
+
+            <span class="notice-icon">ⓘ</span>
+
+            <div>
+                <strong>معلومات حول التخزين</strong>
+
+                <p>
+               يتم تخزين جميع الوثائق والملفات التعليمية على خدمة Google Drive، ضمن مكتبة موارد منظمة حسب السداسيات والتصنيفات. تتزامن الملفات تلقائياً مع المنصة، مما يتيح للأساتذة والطلبة الوصول إلى الوثائق المنشورة وتحميلها بسهولة عبر الموقع، في أي وقت، حسب الصلاحيات المتاحة.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="admin-columns">
+
+            <!-- نموذج إضافة الوثائق -->
+            <section class="admin-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="eyebrow">نشر الوثائق</span>
+                        <h2 id="form-heading">إضافة مورد جديد</h2>
+                    </div>
+
+                    <span class="panel-symbol">＋</span>
+
+                </div>
+
+                <div id="form-message"
+                     class="form-message"
+                     role="status"
+                     hidden>
+                </div>
+
+                <form id="resource-form" novalidate>
+
+                    <input type="hidden" id="resource-id">
+
+                    <!-- عنوان الوثيقة -->
+                    <div class="form-field">
+
+                        <label for="resource-title">
+                            عنوان الوثيقة
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            id="resource-title"
+                            name="title"
+                            type="text"
+                            maxlength="160"
+                            placeholder="مثال: مقدمة في علم الحركة"
+                            required
+                        >
+
+                        <small>الحد الأقصى 160 حرفاً.</small>
+
+                    </div>
+
+                    <!-- الوصف -->
+                    <div class="form-field">
+
+                        <label for="resource-description">
+                            وصف الوثيقة
+                            <span class="optional">(اختياري)</span>
+                        </label>
+
+                        <textarea
+                            id="resource-description"
+                            name="description"
+                            rows="3"
+                            maxlength="600"
+                            placeholder="اكتبي نبذة قصيرة عن محتوى الوثيقة..."
+                        ></textarea>
+
+                    </div>
+
+                    <!-- السنة والسداسي -->
+                    <div class="form-row">
+
+                        <div class="form-field">
+
+                            <label for="resource-year">
+                                السنة الدراسية
+                                <span class="required">*</span>
+                            </label>
+
+                            <select id="resource-year" required>
+                                <option value="1AS">1AS</option>
+                                <option value="2AS">2AS</option>
+                                <option value="3AS">3AS</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-field">
+
+                            <label for="resource-semester">
+                                السداسي
+                                <span class="required">*</span>
+                            </label>
+
+                            <select id="resource-semester" required>
+                                <option value="S1">السداسي الأول</option>
+                                <option value="S2">السداسي الثاني</option>
+                                <option value="S3">السداسي الثالث</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <!-- نوع الوثيقة -->
+                    <div class="form-field">
+
+                        <label for="resource-category">
+                            نوع الوثيقة
+                            <span class="required">*</span>
+                        </label>
+
+                        <select id="resource-category" required>
+
+                            <option value="دروس">دروس</option>
+
+                            <option value="TD">TD</option>
+
+                            <option value="دراسات تقنية">
+                                دراسات تقنية
+                            </option>
+
+                            <option value="وثائق الأستاذ">
+                                وثائق الأستاذ
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- استيراد الملف -->
+                    <div class="form-field">
+
+                        <label for="resource-file">
+                            الملف
+                            <span class="required">*</span>
+                        </label>
+
+                        <label class="file-drop" for="resource-file">
+
+                            <span class="file-drop-icon">↑</span>
+
+                            <strong id="file-prompt">
+                                اختر ملفاً لاستيراده
+                            </strong>
+
+                            <span>
+                                PDF, DOC, DOCX, PPT, PPTX,
+                                JPG, JPEG, PNG أو WEBP
+                            </span>
+
+                            <input
+                                id="resource-file"
+                                type="file"
+                                accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.webp,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,image/jpeg,image/png,image/webp"
+                            >
+
+                        </label>
+
+                        <small id="file-help">
+                            الحجم الأقصى للملف هو 50 ميغابايت.
+                        </small>
+
+                    </div>
+
+                    <!-- أزرار النموذج -->
+                    <div class="form-actions">
+
+                        <button
+                            id="submit-resource"
+                            class="btn btn-primary"
+                            type="submit"
+                        >
+                            نشر الوثيقة <span>←</span>
+                        </button>
+
+                        <button
+                            id="cancel-edit"
+                            class="btn btn-secondary"
+                            type="button"
+                            hidden
+                        >
+                            إلغاء التعديل
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+            <!-- قائمة الموارد المنشورة -->
+            <section class="admin-panel library-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="eyebrow">المكتبة التعليمية</span>
+                        <h2>الوثائق المنشورة</h2>
+                    </div>
+
+                    <span id="admin-count" class="count-pill">
+                        0 وثيقة
+                    </span>
+
+                </div>
+
+                <!-- البحث -->
+                <div class="admin-search">
+
+                    <label
+                        class="sr-only"
+                        for="admin-search-input"
+                    >
+                        البحث عن وثيقة
+                    </label>
+
+                    <span>⌕</span>
+
+                    <input
+                        id="admin-search-input"
+                        type="search"
+                        placeholder="ابحث حسب عنوان الوثيقة..."
+                    >
+
+                </div>
+
+                <!-- عرض الموارد -->
+                <div
+                    id="admin-resource-list"
+                    class="admin-resource-list"
+                    aria-live="polite"
+                >
+
+                    <div class="loading-state">
+                        جارٍ تحميل الوثائق...
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- التذييل -->
+<footer class="site-footer">
+
+    <div class="container footer-main">
+
+        <a class="brand footer-brand" href="../index.html">
+
+            <span class="brand-mark">M</span>
+
+            <span>
+                الميكانيك
+                <small>الفضاء التعليمي</small>
+            </span>
+
+        </a>
+
+        <p>
+            فضاء بسيط للتعلم والتطبيق والتطور.
+        </p>
+
+        <div class="footer-links">
+            <a href="../index.html">الرئيسية</a>
+            <a href="ressources.html">الموارد</a>
+        </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+
+        <span>
+            © <span class="current-year"></span>
+            الميكانيك · الفضاء التعليمي
+        </span>
+
+        <span>
+            صُمم لمرافقة مسيرتكم التعليمية.
+        </span>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+# Variables d'environnement et secrets
+.env
+.env.*
+!.env.example
+
+# Dépendances Node.js
+node_modules/
+
+# Données locales
+data/*
+!data/resources.json
+
+# Fichiers uploadés
+uploads/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers temporaires
+*.tmp
+*.bak

@@ -1,0 +1,232 @@
+
+:root {
+    --orange: #F58220;
+    --orange-dark: #D9680B;
+    --ink: #292929;
+    --muted: #737373;
+    --bg: #FFF9F3;
+    --white: #fff;
+    --line: #eee4da;
+    --soft: #fff0e2;
+    --radius: 18px;
+    --shadow: 0 10px 35px rgba(64, 39, 18, .06);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--bg);
+}
+
+a, button, input {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input {
+    outline-color: var(--orange);
+}
+
+/* Carte de connexion */
+.login-container {
+    width: 100%;
+    max-width: 440px;
+    padding: 38px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    animation: loginAppear .4s ease;
+}
+
+/* En-tête */
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-icon {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 18px;
+    display: grid;
+    place-items: center;
+    background: var(--soft);
+    color: var(--orange-dark);
+    border-radius: 17px;
+    font-size: 32px;
+}
+
+.login-header h1 {
+    margin: 0 0 8px;
+    font-size: 27px;
+    line-height: 1.3;
+    letter-spacing: -.8px;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+.login-header h1 span {
+    color: var(--orange);
+}
+
+.login-header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Formulaire */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.login-form label {
+    margin-top: 9px;
+    font-size: 13px;
+    font-weight: 750;
+    color: var(--ink);
+}
+
+.login-form input {
+    width: 100%;
+    min-height: 47px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fffdfb;
+    color: var(--ink);
+    font-size: 14px;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.login-form input::placeholder {
+    color: #aaa098;
+}
+
+.login-form input:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(245, 130, 32, .12);
+    outline: none;
+}
+
+/* Bouton de connexion */
+.login-form button {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 17px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 800;
+    transition: background .2s, transform .2s;
+}
+
+.login-form button:hover {
+    background: var(--orange-dark);
+    transform: translateY(-1px);
+}
+
+.login-form button:active {
+    transform: translateY(0);
+}
+
+/* Message d'erreur */
+.login-error {
+    margin: 8px 0 0;
+    color: #b42318;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Retour à l'accueil */
+.back-home {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    padding-top: 19px;
+    border-top: 1px solid var(--line);
+    color: var(--orange-dark);
+    font-size: 12px;
+    font-weight: 750;
+    transition: color .2s;
+}
+
+.back-home:hover {
+    color: var(--orange);
+}
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 28px;
+    font-weight: 800;
+    box-shadow: var(--shadow);
+}
+/* Animation */
+@keyframes loginAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+
+    .login-container {
+        padding: 28px 22px;
+        border-radius: 15px;
+    }
+
+    .login-header h1 {
+        font-size: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

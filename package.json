@@ -1,0 +1,20 @@
+{
+  "name": "mecanique-platform",
+  "version": "1.0.0",
+  "description": "Application pédagogique responsive développée uniquement en HTML5, CSS3 et JavaScript vanilla. Aucun framework, aucune compilation et aucune dépendance externe.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "express-session": "^1.19.0",
+    "googleapis": "^188.0.0",
+    "multer": "^2.5.0"
+  }
+}

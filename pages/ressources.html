@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F58220">
+    <title>الموارد | الميكانيك</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/ressources.css">
+
+    <script defer src="../js/storage.js"></script>
+    <script defer src="../js/ressources.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container nav-wrap">
+        <a class="brand" href="../index.html">
+            <span class="brand-mark">M</span>
+            <span>الميكانيك <small>الفضاء التعليمي</small></span>
+        </a>
+
+        <button class="menu-toggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+
+        <nav class="main-nav" aria-label="القائمة الرئيسية">
+            <a href="../index.html">الرئيسية</a>
+            <a class="active" href="ressources.html">الموارد</a>
+            <a href="admin.html">الإدارة</a>
+            <a class="nav-cta" href="admin.html">إضافة وثيقة <span>+</span></a>
+        </nav>
+    </div>
+</header>
+
+<main class="page-main">
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="../index.html">الرئيسية</a>
+                <span> / </span>
+                <span>الموارد</span>
+            </div>
+
+            <span class="eyebrow">المكتبة التعليمية</span>
+
+            <h1>اكتشف <span>الموارد التعليمية</span></h1>
+
+            <p>ابحث عن الدروس والأعمال الموجهة والدراسات التقنية ووثائق الأستاذ حسب السنة والسداسي.</p>
+        </div>
+    </section>
+
+    <section class="container resource-layout">
+
+        <aside class="filter-panel">
+
+            <div class="filter-heading">
+                <h2>التصفية</h2>
+                <button id="reset-filters" class="reset-btn" type="button">
+                    إعادة ضبط
+                </button>
+            </div>
+
+            <label for="filter-year">السنة الدراسية</label>
+            <select id="filter-year">
+                <option value="">جميع السنوات</option>
+                <option>1AS</option>
+                <option>2AS</option>
+                <option>3AS</option>
+            </select>
+
+            <label for="filter-semester">السداسي</label>
+            <select id="filter-semester">
+                <option value="">جميع السداسيات</option>
+                <option value="S1">السداسي الأول</option>
+                <option value="S2">السداسي الثاني</option>
+                <option value="S3">السداسي الثالث</option>
+            </select>
+
+            <label for="filter-category">نوع الوثيقة</label>
+            <select id="filter-category">
+                <option value="">جميع الفئات</option>
+                <option>دروس</option>
+                <option>TD</option>
+                <option>دراسات تقنية</option>
+                <option>وثائق الأستاذ</option>
+            </select>
+
+            <div class="filter-help">
+                <span>ⓘ</span>
+                <p>يمكن الجمع بين عدة فلاتر مع خاصية البحث.</p>
+            </div>
+
+        </aside>
+
+        <div class="resource-content">
+
+            <div class="resource-toolbar">
+                <div>
+                    <h2 id="results-heading">جميع الموارد</h2>
+                    <p id="results-count" aria-live="polite">جارٍ التحميل…</p>
+                </div>
+
+                <div class="search-wrap">
+                    <span aria-hidden="true">⌕</span>
+                    <label class="sr-only" for="resource-search">البحث حسب العنوان</label>
+                    <input
+                        id="resource-search"
+                        type="search"
+                        placeholder="ابحث عن وثيقة…"
+                        autocomplete="off"
+                    >
+                </div>
+            </div>
+
+            <div
+                class="step-nav"
+                id="step-nav"
+                aria-label="التنقل حسب المستوى والسداسي والفئة">
+            </div>
+
+            <div
+                id="resource-list"
+                class="resource-list"
+                aria-live="polite">
+                <div class="loading-state">جارٍ تحميل الوثائق…</div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+
+    <div class="container footer-main">
+
+        <a class="brand footer-brand" href="../index.html">
+            <span class="brand-mark">M</span>
+            <span>الميكانيك <small>الفضاء التعليمي</small></span>
+        </a>
+
+        <p>فضاء بسيط للتعلم والتطبيق والتطور.</p>
+
+        <div class="footer-links">
+            <a href="../index.html">الرئيسية</a>
+            <a href="admin.html">الإدارة</a>
+        </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+        <span>© <span class="current-year"></span> الميكانيك · الفضاء التعليمي</span>
+        <span>صُمم لمرافقة مسيرتكم التعليمية.</span>
+    </div>
+
+</footer>
+
+</body>
+</html>
