@@ -13,7 +13,7 @@ const { Readable } = require("stream");
 const app = express();
 
 const PORT = Number(process.env.PORT) || 3000;
-const HOST = process.env.HOST || "127.0.0.1";
+const HOST = "0.0.0.0";
 
 const ROOT = __dirname;
 const DATA_DIR = path.join(ROOT, "data");
